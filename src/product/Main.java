@@ -1,9 +1,6 @@
 package product;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,32 +22,35 @@ public class Main {
 //        productList.addProduct(peach);
 
 
-        System.out.println("Введение в коллекции. Хеш и хеш-функции. Множества. ДЗ 2. Задание 1");
+        System.out.println("Введение в коллекции. Хеш и хеш-функции. Множества. ДЗ 2. Задание 2");
 
-        Set<Product> products = new HashSet<>();
-        products.add(apple);
-        products.add (peach);
-        products.add(pineapple);
+        Map<Product, Float> products = new HashMap<>();
+        products.put(apple, apple.getWeight());
+        products.put (peach, peach.getWeight());
+        products.put(pineapple, pineapple.getWeight());
         Recipes fruitSalad = new Recipes("Фруктовый салат", products);
         RecipeList recipeList = new RecipeList();
         recipeList.addRecipe(fruitSalad);
         System.out.println(recipeList);
+        System.out.println(products);
+        System.out.println(fruitSalad.getRecipePrice());
 
-        System.out.println("Введение в коллекции. Хеш и хеш-функции. Множества. ДЗ 2. Задание 2");
-        Set<Integer> numbers = new HashSet<>();
-        Random random = new Random();
-        while (numbers.size() < 20) {
-            numbers.add(random.nextInt(1000));
-        }
+//        System.out.println("Введение в коллекции. Хеш и хеш-функции. Множества. ДЗ 2. Задание 2");
+//        Set<Integer> numbers = new HashSet<>();
+//        Random random = new Random();
+//        while (numbers.size() < 20) {
+//            numbers.add(random.nextInt(1000));
+//        }
+//
+//        System.out.println(numbers);
+//        Iterator <Integer> iterator = numbers.iterator();
+//        while (iterator.hasNext()) {
+//            Integer next = iterator.next();
+//            if (next % 2 != 0) {
+//                iterator.remove();
+//            }
+//        }
+//        System.out.println(numbers);
 
-        System.out.println(numbers);
-        Iterator <Integer> iterator = numbers.iterator();
-        while (iterator.hasNext()) {
-            Integer next = iterator.next();
-            if (next % 2 != 0) {
-                iterator.remove();
-            }
-        }
-        System.out.println(numbers);
     }
 }
